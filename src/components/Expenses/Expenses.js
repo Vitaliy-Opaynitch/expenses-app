@@ -6,7 +6,11 @@ import Card from '../UI/Card';
 import ExpensesFilter from "./ExpenseFilter";
 
 function Expenses(props) {
-  const [targetYear, setTargetYear] = useState('2020');
+  const [targetYear, setTargetYear] = useState('2023');
+
+  const filteredArr = props.items.filter(item => {
+    return item.date.getFullYear().toString() === targetYear;
+  });
 
   const saveFilterHandler = selectedYear => {
     setTargetYear(selectedYear);
@@ -16,7 +20,7 @@ function Expenses(props) {
     <div>
       <Card className="expenses">
         <ExpensesFilter selected={targetYear} onSaveFilterData={saveFilterHandler} />
-        {props.items.map((expense, index) =>
+        {filteredArr.map((expense, index) =>
           <ExpenseItem
             key={index}
             title={expense.title}

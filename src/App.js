@@ -14,7 +14,7 @@ const dummyExpenses = [
     id: 2,
     title: 'Pencil',
     amount: 1,
-    date: new Date(2023, 3, 12)
+    date: new Date(2021, 3, 12)
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const dummyExpenses = [
     id: 4,
     title: 'Milk',
     amount: 1.8,
-    date: new Date(2023, 4, 11)
+    date: new Date(2022, 4, 11)
   },
 ];
 
