@@ -28,7 +28,6 @@ function ExpenseForm(props) {
       date: new Date(enteredDate)
     }
 
-    console.log(expenseData);
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');
@@ -51,7 +50,8 @@ function ExpenseForm(props) {
       </div>
     </div>
     <div className="new-expense__actions">
-      <button type="submit">Add Expense</button>
+      <button onClick={props.onCancel} className="new-expense-button">Cancel</button>
+      <button className="new-expense-button" type="submit">Add Expense</button>
     </div>
   </form>
 }
